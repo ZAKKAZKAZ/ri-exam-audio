@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f8ff">
+  <title>RI主任者試験 過去問音声アプリ</title>
+  <style>
+    :root{font-family:system-ui,"Noto Sans JP",sans-serif;color:#202b3d;background:#f4f8ff}
+    *{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:auto;padding:24px}
+    header{padding:50px 0 22px}.tag{color:#245a9b;font-weight:800;letter-spacing:.08em}
+    h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.25;margin:.2em 0}.lead{font-size:1.13rem;line-height:1.8}
+    .card{background:#fff;border:1px solid #dce7f5;border-radius:20px;padding:25px;margin:18px 0;box-shadow:0 8px 30px #233f650a}
+    .button{display:inline-block;background:#245a9b;color:#fff;text-decoration:none;font-weight:800;border-radius:13px;padding:17px 24px;font-size:1.07rem;border:0;cursor:pointer}
+    .button:hover{background:#174779}.secondary{background:#eef4fc;color:#245a9b}.secondary:hover{background:#e2edfc}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}.meta{color:#58677a;line-height:1.7;font-size:.94rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px}
+    .grid>div{background:#f1f6fd;border-radius:13px;padding:18px;line-height:1.65}.grid strong{display:block;margin-bottom:4px}
+    h2{font-size:1.4rem}ol{line-height:1.9;padding-left:1.4em}footer{padding:30px 0;color:#6b7685;font-size:.9rem}
+    @media(max-width:560px){main{padding:16px}header{padding-top:28px}.card{padding:19px}.actions>*{width:100%;text-align:center}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="tag">ANDROID 学習アプリ</div>
+    <h1>RI主任者試験<br>過去問音声アプリ</h1>
+    <p class="lead">過去問492問を、問題はmorioki、解答はほのかの音声で学習できます。</p>
+  </header>
+  <section class="card">
+    <h2>アプリをダウンロード</h2>
+    <p>Android版 1.1 ／ APK 約98 MB</p>
+    <div class="actions">
+      <a class="button" href="https://github.com/ZAKKAZKAZ/ri-exam-audio/releases/download/v1.1/RI_Kakomon_Audio_1.1.apk">APKをダウンロード</a>
+      <a class="button secondary" href="https://github.com/ZAKKAZKAZ/ri-exam-audio/releases/tag/v1.1">配布情報を見る</a>
+      <button class="button secondary" type="button" id="share">このページを共有</button>
+    </div>
+    <p class="meta">APKをAndroid端末で開いてインストールしてください。初回はブラウザやファイルアプリからのインストール許可が必要になる場合があります。学習音声はAPKに入っており、再生時のインターネット接続は不要です。</p>
+  </section>
+  <section class="card">
+    <h2>学習方法</h2>
+    <div class="grid">
+      <div><strong>頻出順</strong>頻出分野別一覧の順番に進めます。</div>
+      <div><strong>科目別</strong>実務・法令・生物学・化学・物理学から選べます。</div>
+      <div><strong>年度別</strong>出題年度を選んで進めます。</div>
+      <div><strong>連続再生</strong>問題、解答、次の問題へ自動で進みます。画面を消しても音声が続きます。</div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>使い方</h2>
+    <ol>
+      <li>Android端末でAPKをダウンロードしてインストールします。</li>
+      <li>頻出順・科目別・年度別から学習方法を選びます。</li>
+      <li>問題を聞いてから「解答を見る・音声で聞く」を押すか、「問題と解答を連続再生」を選びます。</li>
+    </ol>
+    <p class="meta">ユーザー提供の問題・解説資料をもとに作成しています。元資料の正誤や法令の現行性を独立に確認したものではありません。</p>
+  </section>
+  <footer>このページはAPK配布用です。ブラウザ内ではアプリを実行しません。</footer>
+</main>
+<script>
+  document.getElementById('share').addEventListener('click',async()=>{
+    const url=location.href;
+    if(navigator.share){try{await navigator.share({title:document.title,url});return}catch{}}
+    try{await navigator.clipboard.writeText(url);alert('このページのURLをコピーしました')}catch{prompt('このURLをコピーしてください',url)}
+  });
+</script>
+</body>
+</html>
